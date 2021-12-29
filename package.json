@@ -1,0 +1,35 @@
+{
+  "name": "home-landing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "author": "tetra",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mini-css-extract-plugin": "^2.4.0",
+    "@types/node": "^16.10.1",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-dev-server": "^4.1.0",
+    "copy-webpack-plugin": "^10.1.0",
+    "css-loader": "^6.3.0",
+    "css-minimizer-webpack-plugin": "^3.2.0",
+    "html-minimizer-webpack-plugin": "^3.4.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.4.5",
+    "sass": "^1.45.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.0",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0"
+  },
+  "dependencies": {
+    "@fontsource/karla": "^4.5.0"
+  }
+}

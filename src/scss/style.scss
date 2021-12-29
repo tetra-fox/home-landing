@@ -1,0 +1,97 @@
+@use "@fontsource/karla/scss/mixins" as Karla;
+@include Karla.fontFaceCustom();
+
+body {
+    margin: 0;
+    background: #222222;
+    font-family: "Karla", sans-serif;
+}
+
+#header {
+    margin: auto;
+    color: white;
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    max-width: 700px;
+}
+
+.service-card {
+    display: grid;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #323336;
+    border: 1px solid #494b50;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all .2s ease;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 3px #1f1f1f);
+
+    &:hover, &:active {
+        background-color: #f7feff;
+        > .caption {
+            color: #252525;
+        }
+        > .icon {
+            filter: none;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    &:active {
+        transform: scale(.97);
+        box-shadow: inset 0 0px 19px 3px #969696;
+    }
+
+    
+    > .caption {
+        margin: auto;
+        color: white;
+        font-size: 10pt;
+    }
+
+    > .icon {
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: grayscale(1) contrast(50%);
+
+        &#service-asf {
+            background-image: url("../img/logos/asf.png");
+        }
+        &#service-homebridge {
+            background-image: url("../img/logos/homebridge.svg");
+        }
+        &#service-pihole {
+            background-image: url("../img/logos/pihole.svg");
+        }
+        &#service-portainer {
+            background-image: url("../img/logos/portainer.svg");
+        }
+        &#service-traefik {
+            background-image: url("../img/logos/traefik.svg");
+        }
+        &#service-unifi {
+            background-image: url("../img/logos/unifi.svg");
+        }
+    }
+}

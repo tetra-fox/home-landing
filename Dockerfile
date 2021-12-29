@@ -9,4 +9,4 @@ RUN npm run build
 FROM nginx:latest
 COPY --from=webpack /app/dist /usr/share/nginx/html
 
-# HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "curl --fail https://home.tetra.cool || exit 1" ]
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "curl --fail https://home.tetra.cool || exit 1" ]

@@ -4,6 +4,7 @@ import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import * as MiniCssExtractPlugin from "mini-css-extract-plugin";
 import * as CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import * as HtmlMinimizerPlugin from "html-minimizer-webpack-plugin";
+// import SveltePreprocess from "svelte-preprocess";
 import "webpack-dev-server";
 
 const config: webpack.Configuration = {
@@ -13,6 +14,24 @@ const config: webpack.Configuration = {
     },
     module: {
         rules: [
+            {
+                test: /\.svelte$/i,
+                use: "svelte-loader"
+                // use: {
+                //     loader: "svelte-loader",
+                //     options: {
+                //         preprocess: SveltePreprocess({
+                //             scss: true
+                //         })
+                //     }
+                // }
+            },
+            {
+                test: /node_modules\/svelte\/.*\.mjs$/,
+                resolve: {
+                    fullySpecified: false
+                }
+            },
             {
                 test: /\.tsx?$/i,
                 use: "ts-loader",
@@ -40,7 +59,7 @@ const config: webpack.Configuration = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/html/index.html"
+            title: "home"
         }),
         new MiniCssExtractPlugin({
             filename: "./css/[name].css",
@@ -51,7 +70,11 @@ const config: webpack.Configuration = {
         minimizer: [new CssMinimizerPlugin(), new HtmlMinimizerPlugin()]
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"]
+        alias: {
+            svelte: path.resolve("node_modules", "svelte")
+        },
+        extensions: [".tsx", ".ts", ".js", ".mjs", ".js", ".svelte"],
+        mainFields: ["svelte", "browser", "module", "main"]
     },
     performance: {
         hints: false

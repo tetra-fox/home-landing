@@ -98,6 +98,9 @@ a {
   &[data-service-id="asf"] > .icon {
     background-image: url("../img/logos/asf.png");
   }
+  &[data-service-id="hass"] > .icon {
+    background-image: url("../img/logos/hass.svg");
+  }
   &[data-service-id="bridge"] > .icon {
     background-image: url("../img/logos/homebridge.svg");
   }
@@ -106,9 +109,6 @@ a {
   }
   &[data-service-id="portainer"] > .icon {
     background-image: url("../img/logos/portainer.svg");
-  }
-  &[data-service-id="traefik"] > .icon {
-    background-image: url("../img/logos/traefik.svg");
   }
   &[data-service-id="unifi"] > .icon {
     background-image: url("../img/logos/unifi.svg");

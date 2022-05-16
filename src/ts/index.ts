@@ -1,13 +1,12 @@
 import "../scss/style.scss";
 import Index from "../svelte/index.svelte";
 
-import { services, time } from "./statuschecker";
+import { services } from "./services";
 
 const index = new Index({
     target: document.body,
     props: {
-        services: services,
-        serverTime: time
+        services
     }
 });
 

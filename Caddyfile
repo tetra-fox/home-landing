@@ -1,0 +1,42 @@
+{
+	email me@tetra.cool
+	# acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+}
+
+home.tetra.cool {
+	root * /public
+	file_server
+}
+
+asf.home.tetra.cool {
+	reverse_proxy localhost:1242
+}
+
+unifi.home.tetra.cool {
+	reverse_proxy https://localhost:8443 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+bridge.home.tetra.cool {
+	reverse_proxy localhost:9000
+}
+
+hass.home.tetra.cool {
+	reverse_proxy localhost:8123
+}
+
+pihole.home.tetra.cool {
+	rewrite * /admin{uri}
+	reverse_proxy localhost:1080
+}
+
+portainer.home.tetra.cool {
+	reverse_proxy https://localhost:9443 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}

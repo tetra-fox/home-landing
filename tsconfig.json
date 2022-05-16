@@ -1,10 +1,11 @@
 {
     "compilerOptions": {
+        "target": "es2021",
         "outDir": "./dist/js",
-        "noImplicitAny": true,
-        "target": "es6",
-        "jsx": "react",
-        "allowJs": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "strict": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "types": ["svelte"],
     }
 }

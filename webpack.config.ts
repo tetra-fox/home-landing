@@ -1,11 +1,20 @@
-import * as path from "path";
-import * as webpack from "webpack";
-import * as HtmlWebpackPlugin from "html-webpack-plugin";
-import * as MiniCssExtractPlugin from "mini-css-extract-plugin";
-import * as CssMinimizerPlugin from "css-minimizer-webpack-plugin";
-import * as HtmlMinimizerPlugin from "html-minimizer-webpack-plugin";
-// import SveltePreprocess from "svelte-preprocess";
+// Webpack
+import path from "path";
+import webpack from "webpack";
 import "webpack-dev-server";
+
+// Plugins
+import SvelteCheckPlugin from "svelte-check-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import HtmlMinimizerPlugin from "html-minimizer-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import Autoprefixer from "autoprefixer";
+import TerserPlugin from "terser-webpack-plugin";
+
+// Svelte preprocessors
+import SveltePreprocess from "svelte-preprocess";
+import Sequence from "./tools/sequence";
 
 const config: webpack.Configuration = {
     mode: "production",
@@ -16,18 +25,24 @@ const config: webpack.Configuration = {
         rules: [
             {
                 test: /\.svelte$/i,
-                use: "svelte-loader"
-                // use: {
-                //     loader: "svelte-loader",
-                //     options: {
-                //         preprocess: SveltePreprocess({
-                //             scss: true
-                //         })
-                //     }
-                // }
+                use: {
+                    loader: "svelte-loader",
+                    options: {
+                        emitCss: true,
+                        preprocess: Sequence([
+                            SveltePreprocess({
+                                scss: true,
+                                sass: true,
+                                postcss: {
+                                    plugins: [Autoprefixer]
+                                }
+                            })
+                        ])
+                    }
+                }
             },
             {
-                test: /node_modules\/svelte\/.*\.mjs$/,
+                test: /node_modules\/svelte\/.*\.mjs$/i,
                 resolve: {
                     fullySpecified: false
                 }
@@ -39,7 +54,19 @@ const config: webpack.Configuration = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [Autoprefixer]
+                            }
+                        }
+                    },
+                    "sass-loader"
+                ]
             },
             {
                 test: /\.(png|svg|jpe?g|gif|webp)$/i,
@@ -59,15 +86,31 @@ const config: webpack.Configuration = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "home"
+            title: ""
         }),
         new MiniCssExtractPlugin({
-            filename: "./css/[name].css",
-            chunkFilename: "[id].css"
-        })
+            filename: "./css/index.[contenthash].css"
+        }),
+        new SvelteCheckPlugin()
     ],
     optimization: {
-        minimizer: [new CssMinimizerPlugin(), new HtmlMinimizerPlugin()]
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new HtmlMinimizerPlugin(),
+            new TerserPlugin()
+        ],
+        moduleIds: "deterministic",
+        runtimeChunk: "single",
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vendor",
+                    chunks: "all"
+                }
+            }
+        }
     },
     resolve: {
         alias: {
@@ -80,7 +123,7 @@ const config: webpack.Configuration = {
         hints: false
     },
     output: {
-        filename: "./js/[name].bundle.js",
+        filename: "./js/[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
         clean: true
     }

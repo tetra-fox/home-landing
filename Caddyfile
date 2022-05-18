@@ -4,12 +4,20 @@
 }
 
 home.tetra.cool {
-	root * /public
-	file_server
+	handle {
+		root * /public
+		file_server
+	}
+
+	handle /status* {
+		uri strip_prefix /status
+		reverse_proxy localhost:3621
+	}
 }
 
 asf.home.tetra.cool {
 	reverse_proxy localhost:1242
+	header Access-Control-Allow-Origin "*"
 }
 
 unifi.home.tetra.cool {
@@ -18,6 +26,7 @@ unifi.home.tetra.cool {
 			tls_insecure_skip_verify
 		}
 	}
+	header Access-Control-Allow-Origin "*"
 }
 
 bridge.home.tetra.cool {
@@ -26,6 +35,7 @@ bridge.home.tetra.cool {
 
 hass.home.tetra.cool {
 	reverse_proxy localhost:8123
+	header Access-Control-Allow-Origin "*"
 }
 
 pihole.home.tetra.cool {
@@ -39,4 +49,5 @@ portainer.home.tetra.cool {
 			tls_insecure_skip_verify
 		}
 	}
+	header Access-Control-Allow-Origin "*"
 }

@@ -13,6 +13,7 @@
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.7.1",
     "autoprefixer": "^10.4.7",
+    "buffer": "^6.0.3",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
@@ -20,6 +21,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss-loader": "^6.2.1",
+    "process": "^0.11.10",
     "sass": "^1.51.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
@@ -37,6 +39,15 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
-    "@fontsource/karla": "^4.5.8"
+    "@fontsource/karla": "^4.5.8",
+    "assert": "^2.0.0",
+    "browserify-zlib": "^0.2.0",
+    "https-browserify": "^1.0.0",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "typed-rest-client": "^1.8.6",
+    "url": "^0.11.0",
+    "util": "^0.12.4"
   }
 }

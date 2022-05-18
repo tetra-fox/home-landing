@@ -1,13 +1,9 @@
 import "../scss/style.scss";
-import Index from "../svelte/index.svelte";
+import App from "../svelte/App.svelte";
 
-import { services } from "./services";
+import Services from "./services";
 
-const index = new Index({
-    target: document.body,
-    props: {
-        services
-    }
+export default new App({
+  target: document.body,
+  props: {services: Services}
 });
-
-export default index;

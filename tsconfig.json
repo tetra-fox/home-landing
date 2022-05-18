@@ -1,11 +1,11 @@
 {
-    "compilerOptions": {
-        "target": "es2021",
-        "outDir": "./dist/js",
-        "moduleResolution": "node",
-        "strict": true,
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "types": ["svelte"],
-    }
+  "compilerOptions": {
+    "target": "es2021",
+    "outDir": "./dist/js",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["svelte"]
+  }
 }

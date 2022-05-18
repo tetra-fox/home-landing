@@ -1,19 +1,19 @@
 @use "@fontsource/karla/scss/mixins" as Karla;
 @include Karla.fontFaceCustom();
 
-$background: #1A1E24;
-$background--secondary: #252A34;
-$background--tertiary: #3A3E4C;
-$foreground: #D3D6D6;
+$background: #1a1e24;
+$background--secondary: #252a34;
+$background--tertiary: #3a3e4c;
+$foreground: #d3d6d6;
 $foreground--secondary: #a6a6a6;
-$borders: #2B303A;
+$borders: #2b303a;
 $shadow: #131518;
 $shadow--secondary: #969696;
-$primary: #FF88FF;
+$primary: #ff88ff;
 $status--checking: #ffd188;
 $status--online: #88ff8e;
 $status--offline: #ff8888;
-$status--glow: 0 0 5px;
+$card-transition: all .2s ease;
 
 body {
   margin: 0;
@@ -23,6 +23,9 @@ body {
 
 #header {
   color: $foreground;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 #container {
@@ -30,6 +33,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.67em;
   height: 100vh;
 }
 
@@ -46,7 +50,7 @@ a {
 
 .service-card {
   display: grid;
-  grid-gap: 10px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
 
@@ -54,8 +58,7 @@ a {
   border: 1px solid $borders;
   border-radius: 5px;
   padding: 10px;
-  transition: all 0.2s ease;
-  cursor: pointer;
+  transition: $card-transition;
   filter: drop-shadow(3px 3px 3px $shadow);
 
   &:hover,
@@ -75,13 +78,14 @@ a {
 
   &:active {
     transform: scale(0.97);
-    box-shadow: inset 0 0px 19px 3px $shadow--secondary;
+    box-shadow: inset 0 0 19px 3px $shadow--secondary;
   }
 
   > .caption {
     margin: auto;
     color: $foreground;
     font-size: 10pt;
+    transition: $card-transition;
   }
 
   > .status {
@@ -96,29 +100,31 @@ a {
       width: 8px;
       height: 8px;
       border-radius: 100%;
+      animation: glow-pulse 1s alternate infinite;
     }
 
     &.online {
       color: $status--online;
       &::before {
+        color: $status--online;
         background-color: $status--online;
-        box-shadow: $status--glow $status--online;
       }
     }
 
     &.offline {
       color: $status--offline;
       &::before {
+        animation: none;
+        color: $status--offline;
         background-color: $status--offline;
-        box-shadow: $status--glow $status--offline;
       }
     }
 
     &.checking {
       color: $status--checking;
       &::before {
+        color: $status--checking;
         background-color: $status--checking;
-        box-shadow: $status--glow $status--checking;
       }
     }
   }
@@ -131,6 +137,7 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     filter: grayscale(1) contrast(50%);
+    transition: $card-transition;
   }
 
   &[data-service-id="asf"] > .icon {
@@ -155,12 +162,8 @@ a {
 
 #server-time {
   font-size: 8pt;
-  color: #969696;
-  margin: auto;
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  color: $foreground--secondary;
+  height: fit-content;
 }
 
 .fade-in-up {
@@ -176,5 +179,14 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  from {
+    filter: drop-shadow(0 0 0);
+  }
+  to {
+    filter: drop-shadow(0 0 2px);
   }
 }

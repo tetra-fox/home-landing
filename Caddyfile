@@ -3,7 +3,7 @@
 	# acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
 }
 
-home.tetra.cool {
+home.tetra.cool, localhost {
 	handle {
 		root * /public
 		file_server

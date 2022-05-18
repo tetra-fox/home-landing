@@ -169,6 +169,7 @@ a {
 .fade-in-up {
   opacity: 0;
   animation: fade-in-up 0.2s ease;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fade-in-up {

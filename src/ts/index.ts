@@ -24,9 +24,9 @@ function randomGreeting() {
   // this is insanely clever: https://stackoverflow.com/a/47095386/2621063
   weights = weights.map((s => a => s += a)(0));
 
-  let random = Math.random() * weights[weights.length - 1];
+  const random = Math.random() * weights[weights.length - 1];
 
-  let selection = greetings.find((_, i) => {
+  const selection = greetings.find((_, i) => {
     if (weights[i] > random) return true;
     return false;
   });

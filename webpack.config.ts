@@ -86,7 +86,7 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: ""
+      title: "home.tetra.cool"
     }),
     new MiniCssExtractPlugin({
       filename: "./css/index.[contenthash].css"

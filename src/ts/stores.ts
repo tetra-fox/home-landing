@@ -35,7 +35,7 @@ const Services: Service[] = [
 ];
 
 function createServices() {
-  const {subscribe, set, update} = writable(Services);
+  const {subscribe, set, update} = writable(Services.sort((a, b) => a.name.localeCompare(b.name)));
 
   return {
     subscribe,

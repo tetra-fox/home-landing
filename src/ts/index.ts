@@ -20,16 +20,10 @@ const greetings = [
 ];
 
 function randomGreeting() {
-  let weights: number[] = greetings.map(greeting => greeting.weight);
   // this is insanely clever: https://stackoverflow.com/a/47095386/2621063
-  weights = weights.map((s => a => s += a)(0));
-
+  const weights = greetings.map((s => a => s += a.weight)(0));
   const random = Math.random() * weights[weights.length - 1];
-
-  const selection = greetings.find((_, i) => {
-    if (weights[i] > random) return true;
-    return false;
-  });
+  const selection = greetings.find((_, i) => weights[i] > random);
 
   if (!selection) return greetings[0].text; // theoretically impossible, but just in case
   return selection.text;

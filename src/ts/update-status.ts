@@ -1,6 +1,6 @@
 import {Status} from "./status";
 import {get} from "svelte/store";
-import {services, time} from "./stores";
+import {apps, time} from "./stores";
 import * as rm from "typed-rest-client/RestClient";
 
 async function getStatus(): Promise<StatusResponse> {
@@ -8,6 +8,7 @@ async function getStatus(): Promise<StatusResponse> {
     "home-landing",
     "https://home.tetra.cool"
   );
+
   const res: rm.IRestResponse<StatusResponse> = await rest.get<StatusResponse>(
     "/status"
   );
@@ -16,21 +17,23 @@ async function getStatus(): Promise<StatusResponse> {
 
   time.set(new Date(res.result.time));
 
-  const serviceStore: Service[] = get(services);
+  const appStore: App[] = get(apps);
 
-  serviceStore.forEach((service: Service) => {
+  appStore.forEach((app: App) => {
     const container = res.result?.containers
-      .filter(c => serviceStore.map(s => s.id).includes(c.name))
-      .find(c => c.name === service.id);
+      .filter(c => appStore.map(s => s.id).includes(c.name))
+      .find(c => c.name === app.id);
     if (!container) {
-      services.setStatus(service.id, Status.Offline);
+      apps.setStatus(app.id, Status.Offline);
       return;
     }
 
-    if (container.status === "running") {
-      services.setStatus(service.id, Status.Online);
+    if (container.state === "running") {
+      apps.setStatus(app.id, Status.Online);
+      if (container.status.includes("(healthy)")) apps.setStatus(app.id, Status.Healthy);
+      if (container.status.includes("(unhealthy)")) apps.setStatus(app.id, Status.Unhealthy);
     } else {
-      services.setStatus(service.id, Status.Offline);
+      apps.setStatus(app.id, Status.Offline);
     }
   });
 
@@ -38,9 +41,9 @@ async function getStatus(): Promise<StatusResponse> {
 }
 
 export async function updateStatus(): Promise<void> {
-  const serviceStore: Service[] = get(services);
-  serviceStore.forEach((service: Service) => {
-    services.setStatus(service.id, Status.Checking);
+  const appStore: App[] = get(apps);
+  appStore.forEach((app: App) => {
+    apps.setStatus(app.id, Status.Checking);
   });
   await getStatus();
 }

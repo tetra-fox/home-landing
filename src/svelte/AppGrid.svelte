@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {services} from "../ts/stores";
+  import {apps} from "../ts/stores";
 
   const cleanupAnimations = () => {
     Array.from(document.querySelectorAll(".fade-in-up")).forEach(e => {
@@ -13,16 +13,16 @@
 <svelte:window on:load={cleanupAnimations} />
 
 <div id="app-grid">
-  {#each $services as service, i}
-    <a href="//{service.id}.home.tetra.cool">
+  {#each $apps as app, i}
+    <a href="//{app.id}.home.tetra.cool">
       <div
-        class="service-card fade-in-up"
-        data-service-id={service.id}
+        class="app-card fade-in-up"
+        data-app-id={app.id}
         style="animation-delay: {i * 20}ms;"
       >
         <span class="icon" />
-        <span class="caption">{service.name}</span>
-        <span class="status {service.status}">{service.status}</span>
+        <span class="caption">{app.name}</span>
+        <span class="status {app.status}">{app.status}</span>
       </div>
     </a>
   {/each}

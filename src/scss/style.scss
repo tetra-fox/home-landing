@@ -13,7 +13,7 @@ $primary: #ff88ff;
 $status--checking: #ffd188;
 $status--online: #88ff8e;
 $status--offline: #ff8888;
-$card-transition: all .2s ease;
+$card-transition: all 0.2s ease;
 
 body {
   margin: 0;
@@ -29,6 +29,7 @@ body {
 }
 
 #container {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,24 +38,28 @@ body {
   height: 100vh;
 }
 
+#container > * {
+  margin: 0 auto;
+}
+
 #app-grid {
   width: 700px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  gap: 10px;
 }
 
 a {
   text-decoration: none;
 }
 
-.service-card {
+.app-card {
   display: grid;
   gap: 10px;
   justify-content: center;
   align-items: center;
 
-  background-color: $background--secondary;
+  background: $background--secondary;
   border: 1px solid $borders;
   border-radius: 5px;
   padding: 10px;
@@ -63,7 +68,7 @@ a {
 
   &:hover,
   &:active {
-    background-color: $foreground;
+    background: $foreground;
     > .caption {
       color: $background;
     }
@@ -103,29 +108,48 @@ a {
       animation: glow-pulse 1s alternate infinite;
     }
 
-    &.online {
+    &.online,
+    &.healthy {
       color: $status--online;
       &::before {
-        color: $status--online;
-        background-color: $status--online;
+        background: $status--online;
       }
+    }
+
+    &.unhealthy {
+      color: $status--checking;
     }
 
     &.offline {
       color: $status--offline;
       &::before {
+        background: $status--offline;
         animation: none;
-        color: $status--offline;
-        background-color: $status--offline;
       }
     }
 
-    &.checking {
+    &.checking,
+    &.unhealthy {
       color: $status--checking;
       &::before {
-        color: $status--checking;
-        background-color: $status--checking;
+        background: $status--checking;
       }
+    }
+
+    &.healthy::before {
+      background: url("../img/heart-healthy.svg");
+    }
+
+    &.unhealthy::before {
+      background: url("../img/heart-unhealthy.svg");
+    }
+
+    &.healthy::before,
+    &.unhealthy::before {
+      width: 10px;
+      height: 10px;
+      background-size: contain;
+      border-radius: 0;
     }
   }
 
@@ -140,22 +164,22 @@ a {
     transition: $card-transition;
   }
 
-  &[data-service-id="asf"] > .icon {
+  &[data-app-id="asf"] > .icon {
     background-image: url("../img/logos/asf.png");
   }
-  &[data-service-id="hass"] > .icon {
+  &[data-app-id="hass"] > .icon {
     background-image: url("../img/logos/hass.svg");
   }
-  &[data-service-id="bridge"] > .icon {
+  &[data-app-id="bridge"] > .icon {
     background-image: url("../img/logos/homebridge.svg");
   }
-  &[data-service-id="pihole"] > .icon {
+  &[data-app-id="pihole"] > .icon {
     background-image: url("../img/logos/pihole.svg");
   }
-  &[data-service-id="portainer"] > .icon {
+  &[data-app-id="portainer"] > .icon {
     background-image: url("../img/logos/portainer.svg");
   }
-  &[data-service-id="unifi"] > .icon {
+  &[data-app-id="unifi"] > .icon {
     background-image: url("../img/logos/unifi.svg");
   }
 }

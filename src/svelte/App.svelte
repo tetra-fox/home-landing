@@ -13,6 +13,10 @@
 </script>
 
 <svelte:window on:load={initializePolling}/>
+<svelte:head>
+  <title>{greeting}</title>
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+</svelte:head>
 
 <div id="container">
   <span id="header">{greeting}</span>

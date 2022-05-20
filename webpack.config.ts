@@ -14,6 +14,7 @@ import TerserPlugin from "terser-webpack-plugin";
 
 // Svelte preprocessors
 import SveltePreprocess from "svelte-preprocess";
+import ImportAssets from "svelte-preprocess-import-assets";
 import Sequence from "./tools/sequence";
 
 const config: webpack.Configuration = {
@@ -36,7 +37,8 @@ const config: webpack.Configuration = {
                 postcss: {
                   plugins: [Autoprefixer]
                 }
-              })
+              }),
+              ImportAssets()
             ])
           }
         }
@@ -85,9 +87,7 @@ const config: webpack.Configuration = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: "home.tetra.cool"
-    }),
+    new HtmlWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "./css/index.[contenthash].css"
     }),

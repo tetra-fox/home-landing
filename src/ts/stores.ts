@@ -1,7 +1,7 @@
 import {writable} from "svelte/store";
 import {Status} from "./status";
 
-const Services: Service[] = [
+const Apps: App[] = [
   {
     id: "asf",
     name: "ArchiSteamFarm",
@@ -34,15 +34,15 @@ const Services: Service[] = [
   }
 ];
 
-function createServices() {
-  const {subscribe, set, update} = writable(Services.sort((a, b) => a.name.localeCompare(b.name)));
+function createApps() {
+  const {subscribe, set, update} = writable(Apps.sort((a, b) => a.name.localeCompare(b.name)));
 
   return {
     subscribe,
     setStatus: (id: string, status: Status) => {
-      update(services => {
-        services.filter(service => service.id === id)[0].status = status;
-        return services;
+      update(apps => {
+        apps.filter(app => app.id === id)[0].status = status;
+        return apps;
       });
     }
   };
@@ -53,9 +53,9 @@ export const time = writable(new Date(0), () => {
     time.update(time => new Date(time.getTime() + 1000));
   }, 1000);
 
-  return function stop() {
+  return () => {
     clearInterval(interval);
   };
 });
 
-export const services = createServices();
+export const apps = createApps();

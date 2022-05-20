@@ -1,4 +1,4 @@
-FROM node:17 AS webpack
+FROM node:18 AS webpack
 WORKDIR /app
 COPY . /app
 RUN npm ci

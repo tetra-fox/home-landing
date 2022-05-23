@@ -38,7 +38,7 @@
     "svelte-preprocess-import-assets": "^0.1.6",
     "terser-webpack-plugin": "^5.3.1",
     "ts-loader": "^9.3.0",
-    "ts-node": "^10.7.0",
+    "ts-node": "^10.8.0",
     "typed-rest-client": "^1.8.6",
     "typescript": "^4.6.4",
     "url": "^0.11.0",

@@ -10,7 +10,7 @@ async function getStatus(): Promise<StatusResponse> {
   );
 
   const res: rm.IRestResponse<StatusResponse> = await rest.get<StatusResponse>(
-    "/status"
+    "/api"
   );
   if (res.statusCode !== 200 || !res.result)
     throw new Error("Failed to get status");

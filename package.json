@@ -9,7 +9,7 @@
   "author": "tetra",
   "devDependencies": {
     "@fontsource/karla": "^4.5.8",
-    "@types/node": "^17.0.42",
+    "@types/node": "^18.0.6",
     "@types/webpack": "^5.28.0",
     "assert": "^2.0.0",
     "autoprefixer": "^10.4.7",

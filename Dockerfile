@@ -4,7 +4,7 @@ COPY . /app
 RUN npm ci
 RUN npm run build
 
-FROM caddy:2.5.1-alpine
+FROM caddy:2.5.2-alpine
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY --from=webpack /app/dist /public
 

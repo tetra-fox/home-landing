@@ -6,6 +6,9 @@
     "build": "webpack",
     "start": "webpack serve --open"
   },
+  "engines": {
+    "node": ">= 18.0.0"
+  },
   "author": "tetra",
   "devDependencies": {
     "@fontsource/karla": "4.5.11",

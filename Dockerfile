@@ -1,4 +1,4 @@
-FROM node:18 AS webpack
+FROM node:19 AS webpack
 WORKDIR /app
 COPY . /app
 

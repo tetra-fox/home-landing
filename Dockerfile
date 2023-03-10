@@ -1,10 +1,13 @@
 FROM node:18 AS webpack
 WORKDIR /app
 COPY . /app
-RUN npm ci
-RUN npm run build
 
-FROM caddy:2.5.2-alpine
+RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
+
+RUN pnpm install --frozen-lockfile --prod
+RUN pnpm run build
+
+FROM hotio/caddy:release-2.6.4
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY --from=webpack /app/dist /public
 

@@ -1,8 +1,8 @@
-FROM node:19 AS webpack
+FROM node:19-alpine AS webpack
 WORKDIR /app
 COPY . /app
 
-RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
+RUN npm install -g pnpm
 
 RUN pnpm install --frozen-lockfile --prod
 RUN pnpm run build

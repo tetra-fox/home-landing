@@ -4,7 +4,7 @@ COPY . /app
 
 RUN npm install -g pnpm
 
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --frozen-lockfile
 RUN pnpm run build
 
 FROM hotio/caddy:release-2.6.4

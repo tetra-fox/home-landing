@@ -33,7 +33,7 @@ jobs:
       - name: Allow pushing to registry # Only when pushing to main, or when enabled upon dispatch
         if: "(github.event_name == 'push' && contains(github.ref, 'main')) || (github.event_name == 'workflow_dispatch' && github.event.inputs.should_push == true)"
         run: echo "SHOULD_PUSH=true" >> $GITHUB_ENV
-          
+
       - name: Checkout
         uses: actions/checkout@v3.3.0
 
@@ -49,7 +49,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v4.3.0

@@ -1,0 +1,14 @@
+@import "@fontsource/karla";
+
+* {
+  margin: 0;
+}
+
+body {
+  background: $background;
+  font-family: "Karla", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}

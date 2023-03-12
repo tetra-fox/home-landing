@@ -1,0 +1,15 @@
+/* Variables and mixins declared here will be available in all other SCSS files */
+$background: #1a1e24;
+$background--secondary: #252a34;
+$background--tertiary: #3a3e4c;
+$foreground: #d3d6d6;
+$foreground--secondary: #a6a6a6;
+$borders: #2b303a;
+$shadow: #131518;
+$shadow--secondary: #969696;
+$primary: #ff88ff;
+$status--checking: #d1d394;
+$status--online: #88ff8e;
+$status--unhealthy: #ffd188;
+$status--offline: $foreground--secondary;
+$card-transition: all 0.2s ease;

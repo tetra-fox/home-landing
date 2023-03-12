@@ -1,50 +1,12 @@
 {
-        email me@tetra.cool
-        # acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+  http_port  8080
+  https_port 8443
 }
 
-home.tetra.cool, localhost {
-        handle {
-                root * /public
-                file_server
-        }
-
-        handle /api* {
-                uri strip_prefix /api
-                reverse_proxy info:8080
-                header Access-Control-Allow-Origin "*"
-        }
-}
-
-asf.home.tetra.cool {
-        reverse_proxy asf:1242
-}
-
-unifi.home.tetra.cool {
-        reverse_proxy https://unifi:8443 {
-                transport http {
-                        tls_insecure_skip_verify
-                }
-        }
-}
-
-bridge.home.tetra.cool {
-        reverse_proxy bridge:8581
-}
-
-hass.home.tetra.cool {
-        reverse_proxy 172.17.0.1:8123 # this is crazy i had no idea you could do this
-}
-
-pihole.home.tetra.cool {
-        rewrite * /admin{uri}
-        reverse_proxy pihole:80
-}
-
-portainer.home.tetra.cool {
-        reverse_proxy https://portainer:9443 {
-                transport http {
-                        tls_insecure_skip_verify
-                }
-        }
+:8080 {
+  log {
+    output file /config/logs/access.log
+  }
+  root * /public
+  file_server
 }

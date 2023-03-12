@@ -1,14 +1,10 @@
-node_modules/
-.webpack/
-
-# vscode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-.history
-.ionide
-
-dist/
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

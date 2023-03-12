@@ -5,11 +5,12 @@ on:
     paths:
       - "src/**"
       - "static/**"
+      - "Caddyfile"
+      - "Dockerfile"
       - "package.json"
       - "pnpm-lock.yaml"
-      - "Dockerfile"
-      - "svelte.config.js"
       - "postcss.config.cjs"
+      - "svelte.config.js"
       - "vite.config.ts"
   release:
     types: [published]
@@ -27,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set SHOULD_PUSH to true # Only when pushing to main, or when enabled upon dispatch
+      - name: Allow pushing to registry # Only when pushing to main, or when enabled upon dispatch
         if: "(github.event_name == 'push' && contains(github.ref, 'main')) || (github.event_name == 'workflow_dispatch' && github.event.inputs.should_push == true)"
         run: echo "SHOULD_PUSH=true" >> $GITHUB_ENV
           

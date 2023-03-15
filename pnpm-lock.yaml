@@ -1,28 +1,28 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/karla': ^4.5.11
-  '@sveltejs/adapter-static': ^2.0.1
-  '@sveltejs/kit': ^1.11.0
-  '@typescript-eslint/eslint-plugin': ^5.54.1
-  '@typescript-eslint/parser': ^5.54.1
-  autoprefixer: ^10.4.14
-  eslint: ^8.36.0
-  eslint-config-prettier: ^8.7.0
-  eslint-plugin-svelte3: ^4.0.0
-  lucide-svelte: ^0.125.0
-  postcss: ^8.4.21
-  postcss-load-config: ^4.0.1
-  prettier: ^2.8.4
-  prettier-plugin-svelte: ^2.9.0
-  sass: ^1.59.2
-  svelte: ^3.56.0
-  svelte-check: ^3.1.2
-  svelte-preprocess: ^5.0.1
-  tslib: ^2.5.0
-  typescript: ^4.9.5
-  vanilla-tilt: ^1.8.0
-  vite: ^4.1.4
+  '@fontsource/karla': 4.5.11
+  '@sveltejs/adapter-static': 2.0.1
+  '@sveltejs/kit': 1.11.0
+  '@typescript-eslint/eslint-plugin': 5.54.1
+  '@typescript-eslint/parser': 5.54.1
+  autoprefixer: 10.4.14
+  eslint: 8.36.0
+  eslint-config-prettier: 8.7.0
+  eslint-plugin-svelte3: 4.0.0
+  lucide-svelte: 0.125.0
+  postcss: 8.4.21
+  postcss-load-config: 4.0.1
+  prettier: 2.8.4
+  prettier-plugin-svelte: 2.9.0
+  sass: 1.59.2
+  svelte: 3.56.0
+  svelte-check: 3.1.4
+  svelte-preprocess: 5.0.1
+  tslib: 2.5.0
+  typescript: 4.9.5
+  vanilla-tilt: 1.8.0
+  vite: 4.1.4
 
 devDependencies:
   '@fontsource/karla': 4.5.11
@@ -41,7 +41,7 @@ devDependencies:
   prettier-plugin-svelte: 2.9.0_gan2xfhhcbz3kbkivttwsjndea
   sass: 1.59.2
   svelte: 3.56.0
-  svelte-check: 3.1.2_cywm432h5wildlvspqka3k5vpm
+  svelte-check: 3.1.4_cywm432h5wildlvspqka3k5vpm
   svelte-preprocess: 5.0.1_jaggnctj4msbyugbagfslffsiq
   tslib: 2.5.0
   typescript: 4.9.5
@@ -1670,8 +1670,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/3.1.2_cywm432h5wildlvspqka3k5vpm:
-    resolution: {integrity: sha512-8nIPXPe8TiUiWPCAoegU+l1NaL5DKLnN6+H1dJqbjkD6IkhpDTMj2q8Z88lhCOsq1F3E7st5/Vn7eGeGkSo/aA==}
+  /svelte-check/3.1.4_cywm432h5wildlvspqka3k5vpm:
+    resolution: {integrity: sha512-25Lb46ZS4IK/XpBMe4IBMrtYf23V8alqBX+szXoccb7uM0D2Wqq5rMRzYBONZnFVuU1bQG3R50lyIT5eRewv2g==}
     hasBin: true
     peerDependencies:
       svelte: ^3.55.0

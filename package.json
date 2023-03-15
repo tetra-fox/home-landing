@@ -9,17 +9,19 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write ."
+    "format": "prettier --plugin-search-dir . --write .",
+    "fmt": "pnpm format"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "pnpm": ">=7.0.0"
   },
   "devDependencies": {
     "@fontsource/karla": "4.5.11",
     "@sveltejs/adapter-static": "2.0.1",
     "@sveltejs/kit": "1.11.0",
-    "@typescript-eslint/eslint-plugin": "5.54.1",
-    "@typescript-eslint/parser": "5.54.1",
+    "@typescript-eslint/eslint-plugin": "5.55.0",
+    "@typescript-eslint/parser": "5.55.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.36.0",
     "eslint-config-prettier": "8.7.0",
@@ -29,10 +31,10 @@
     "postcss-load-config": "4.0.1",
     "prettier": "2.8.4",
     "prettier-plugin-svelte": "2.9.0",
-    "sass": "1.59.2",
-    "svelte": "3.56.0",
-    "svelte-check": "3.1.2",
-    "svelte-preprocess": "5.0.1",
+    "sass": "1.59.3",
+    "svelte": "3.57.0",
+    "svelte-check": "3.1.4",
+    "svelte-preprocess": "5.0.2",
     "tslib": "2.5.0",
     "typescript": "4.9.5",
     "vanilla-tilt": "1.8.0",

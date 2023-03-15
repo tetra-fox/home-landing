@@ -1,6 +1,5 @@
 import { writable, readable, type Readable, type Writable } from "svelte/store";
 import { Status } from "$lib/status";
-import type { WeightedItem } from "$lib/random_weighted";
 
 export const greetings: Readable<WeightedItem[]> = readable([
   { value: "welcome home", weight: 1.0 }, // English

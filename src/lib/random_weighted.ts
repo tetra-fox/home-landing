@@ -1,5 +1,3 @@
-export type WeightedItem = { value: unknown; weight: number };
-
 export default function randomWeighted(items: WeightedItem[]) {
   // this is insanely clever: https://stackoverflow.com/a/47095386/2621063
   const weights = items.map(

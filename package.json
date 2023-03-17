@@ -19,7 +19,7 @@
   "devDependencies": {
     "@fontsource/karla": "4.5.11",
     "@sveltejs/adapter-static": "2.0.1",
-    "@sveltejs/kit": "1.11.0",
+    "@sveltejs/kit": "1.12.0",
     "@typescript-eslint/eslint-plugin": "5.55.0",
     "@typescript-eslint/parser": "5.55.0",
     "autoprefixer": "10.4.14",
@@ -36,9 +36,9 @@
     "svelte-check": "3.1.4",
     "svelte-preprocess": "5.0.2",
     "tslib": "2.5.0",
-    "typescript": "4.9.5",
+    "typescript": "5.0.2",
     "vanilla-tilt": "1.8.0",
-    "vite": "4.1.4"
+    "vite": "4.2.0"
   },
   "type": "module"
 }

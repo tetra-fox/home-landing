@@ -18,7 +18,7 @@ specifiers:
   sass: 1.59.3
   svelte: 3.57.0
   svelte-check: 3.1.4
-  svelte-preprocess: 5.0.2
+  svelte-preprocess: 5.0.3
   tslib: 2.5.0
   typescript: 5.0.2
   vanilla-tilt: 1.8.0
@@ -42,7 +42,7 @@ devDependencies:
   sass: 1.59.3
   svelte: 3.57.0
   svelte-check: 3.1.4_ypdkaira24qvj5wapt3gb3lzse
-  svelte-preprocess: 5.0.2_i2wcdmahlu35qvmespfn6uxp5a
+  svelte-preprocess: 5.0.3_i2wcdmahlu35qvmespfn6uxp5a
   tslib: 2.5.0
   typescript: 5.0.2
   vanilla-tilt: 1.8.0
@@ -1656,7 +1656,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.57.0
-      svelte-preprocess: 5.0.2_mnyvnibshrgdmil5ggy7w65rli
+      svelte-preprocess: 5.0.3_mnyvnibshrgdmil5ggy7w65rli
       typescript: 4.9.5
     transitivePeerDependencies:
       - '@babel/core'
@@ -1679,8 +1679,8 @@ packages:
       svelte: 3.57.0
     dev: true
 
-  /svelte-preprocess/5.0.2_i2wcdmahlu35qvmespfn6uxp5a:
-    resolution: {integrity: sha512-iXpIoa43VdF7fPkBdoodztZd4H+3EP/GYA66tbuLVtQnM3sWCpsOtc7HjfA7BDR+6VTpqlEnpDmPoXk0dgUa0g==}
+  /svelte-preprocess/5.0.3_i2wcdmahlu35qvmespfn6uxp5a:
+    resolution: {integrity: sha512-GrHF1rusdJVbOZOwgPWtpqmaexkydznKzy5qIC2FabgpFyKN57bjMUUUqPRfbBXK5igiEWn1uO/DXsa2vJ5VHA==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
     peerDependencies:
@@ -1729,8 +1729,8 @@ packages:
       typescript: 5.0.2
     dev: true
 
-  /svelte-preprocess/5.0.2_mnyvnibshrgdmil5ggy7w65rli:
-    resolution: {integrity: sha512-iXpIoa43VdF7fPkBdoodztZd4H+3EP/GYA66tbuLVtQnM3sWCpsOtc7HjfA7BDR+6VTpqlEnpDmPoXk0dgUa0g==}
+  /svelte-preprocess/5.0.3_mnyvnibshrgdmil5ggy7w65rli:
+    resolution: {integrity: sha512-GrHF1rusdJVbOZOwgPWtpqmaexkydznKzy5qIC2FabgpFyKN57bjMUUUqPRfbBXK5igiEWn1uO/DXsa2vJ5VHA==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
     peerDependencies:

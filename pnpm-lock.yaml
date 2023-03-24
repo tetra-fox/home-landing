@@ -13,7 +13,7 @@ specifiers:
   lucide-svelte: 0.125.0
   postcss: 8.4.21
   postcss-load-config: 4.0.1
-  prettier: 2.8.4
+  prettier: 2.8.7
   prettier-plugin-svelte: 2.9.0
   sass: 1.59.3
   svelte: 3.57.0
@@ -37,8 +37,8 @@ devDependencies:
   lucide-svelte: 0.125.0_svelte@3.57.0
   postcss: 8.4.21
   postcss-load-config: 4.0.1_postcss@8.4.21
-  prettier: 2.8.4
-  prettier-plugin-svelte: 2.9.0_k23gl6auqwrxgr3e6o2bajswou
+  prettier: 2.8.7
+  prettier-plugin-svelte: 2.9.0_5ir2xprf4ygk6mygilwnltaw3a
   sass: 1.59.3
   svelte: 3.57.0
   svelte-check: 3.1.4_ypdkaira24qvj5wapt3gb3lzse
@@ -1449,18 +1449,18 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte/2.9.0_k23gl6auqwrxgr3e6o2bajswou:
+  /prettier-plugin-svelte/2.9.0_5ir2xprf4ygk6mygilwnltaw3a:
     resolution: {integrity: sha512-3doBi5NO4IVgaNPtwewvrgPpqAcvNv0NwJNflr76PIGgi9nf1oguQV1Hpdm9TI2ALIQVn/9iIwLpBO5UcD2Jiw==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
-      prettier: 2.8.4
+      prettier: 2.8.7
       svelte: 3.57.0
     dev: true
 
-  /prettier/2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+  /prettier/2.8.7:
+    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true

@@ -2,20 +2,10 @@ name: Build image
 
 on:
   push:
-    tags-ignore:
-      - "**"
-    paths:
-      - "src/**"
-      - "static/**"
-      - "Caddyfile"
-      - "Dockerfile"
-      - "package.json"
-      - "pnpm-lock.yaml"
-      - "postcss.config.cjs"
-      - "svelte.config.js"
-      - "vite.config.ts"
-  release:
-    types: [published]
+    branches-ignore:
+      - "renovate/**"
+    paths-ignore:
+      - ".github/**"
   workflow_dispatch:
     inputs:
       should_push:

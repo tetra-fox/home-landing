@@ -2,10 +2,14 @@ name: Build image
 
 on:
   push:
-    branches-ignore:
-      - "renovate/**"
-    paths-ignore:
-      - ".github/**"
+    paths:
+      - "!.github/**"
+      - "src/**"
+      - "static/**"
+      - "**/*.json"
+      - "**/*.ya?ml"
+      - "**/*.ts"
+      - "**/*.c?jsx?"
   workflow_dispatch:
     inputs:
       should_push:
@@ -21,7 +25,7 @@ jobs:
 
     steps:
       - name: Allow pushing to registry # Only when pushing to main, or when enabled upon dispatch
-        if: "(github.event_name == 'push' && contains(github.ref, 'main')) || (github.event_name == 'workflow_dispatch' && github.event.inputs.should_push == true)"
+        if: "(github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && github.event.inputs.should_push == true)"
         run: echo "SHOULD_PUSH=true" >> $GITHUB_ENV
 
       - name: Checkout

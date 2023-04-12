@@ -1,11 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":semanticCommits", "schedule:weekly"],
+  "automerge": true,
+  "automergeType": "branch",
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true,
-      "automergeType": "branch"
+      "groupName": "dockerfile",
+      "matchManagers": ["dockerfile"]
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "github actions",
+      "matchManagers": ["github-actions"]
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "npm",
+      "matchManagers": ["npm"]
     }
   ]
 }

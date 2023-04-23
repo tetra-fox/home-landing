@@ -32,7 +32,7 @@
 
 <div class="app-grid">
   {#each apps as app, i}
-    <a href="https://{app.id}.home.tetra.cool">
+    <a href="https://{app.id}.dtw.tetra.cool">
       <div
         class="app-card tilt"
         data-app-id={app.id}

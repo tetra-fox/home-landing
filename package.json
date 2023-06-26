@@ -17,7 +17,7 @@
     "pnpm": ">=8.0.0"
   },
   "devDependencies": {
-    "@fontsource/karla": "4.5.11",
+    "@fontsource/karla": "5.0.3",
     "@sveltejs/adapter-static": "2.0.1",
     "@sveltejs/kit": "1.15.2",
     "@typescript-eslint/eslint-plugin": "5.57.1",

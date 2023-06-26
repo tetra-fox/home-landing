@@ -1,9 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 devDependencies:
   '@fontsource/karla':
-    specifier: 4.5.11
-    version: 4.5.11
+    specifier: 5.0.3
+    version: 5.0.3
   '@sveltejs/adapter-static':
     specifier: 2.0.1
     version: 2.0.1(@sveltejs/kit@1.15.2)
@@ -305,8 +309,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/karla@4.5.11:
-    resolution: {integrity: sha512-MpH+rW8V5v/mqEwoIrUTmGimY+GIyU5P23DmzYxWcTotosRLGWrg7XOjN4DtkpZuEv2LzHHZxOuFWbjRWL9JfQ==}
+  /@fontsource/karla@5.0.3:
+    resolution: {integrity: sha512-p46o1NCNFKi8M9sGd7O0yud4EtMqrOVapM+ONrS9QjhSMWBhGzeTfFAEpojDoErTLIBwdbk3vXG1D/Gjf7VJZA==}
     dev: true
 
   /@humanwhocodes/config-array@0.11.8:

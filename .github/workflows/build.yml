@@ -10,6 +10,7 @@ on:
       - "**/*.ya?ml"
       - "**/*.ts"
       - "**/*.c?jsx?"
+      - "Dockerfile"
   workflow_dispatch:
     inputs:
       should_push:

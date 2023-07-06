@@ -1,12 +1,11 @@
-{
-  http_port  8080
-  https_port 8443
+(log) {
+	log {
+		output file /var/log/caddy/access.log
+	}
 }
 
-:8080 {
-  log {
-    output file /config/logs/access.log
-  }
-  root * /public
-  file_server
+:80, :443 {
+	import log
+	root * /public
+	file_server
 }

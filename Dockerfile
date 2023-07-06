@@ -27,3 +27,5 @@ COPY --from=node-build /app/Caddyfile /etc/caddy/Caddyfile
 
 ENTRYPOINT ["/usr/bin/caddy"]
 CMD ["run", "--config", "/etc/caddy/Caddyfile"]
+
+#

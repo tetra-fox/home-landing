@@ -55,8 +55,8 @@ jobs:
         uses: docker/build-push-action@v4.1.1
         with:
           push: ${{ env.SHOULD_PUSH }}
-          platforms: linux/amd64,linux/arm64
-          context: .
+          platforms: linux/amd64 #,linux/arm64
+          context: ${{ github.workspace }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha

@@ -30,7 +30,7 @@ jobs:
         run: echo "SHOULD_PUSH=true" >> $GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v3.6.0
+        uses: actions/checkout@v4.0.0
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2.2.0

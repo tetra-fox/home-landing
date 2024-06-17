@@ -30,7 +30,7 @@ jobs:
         run: echo "SHOULD_PUSH=true" >> $GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3.0.0
@@ -53,7 +53,7 @@ jobs:
 
       - name: Build and push image
         id: docker_build
-        uses: docker/build-push-action@v5.3.0
+        uses: docker/build-push-action@v5.4.0
         with:
           push: ${{ env.SHOULD_PUSH }}
           platforms: linux/amd64 #,linux/arm64

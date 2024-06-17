@@ -15,6 +15,8 @@ FROM caddy:${CADDY_VERSION}-builder-alpine AS caddy-build
 
 RUN xcaddy build \
     --with github.com/mholt/caddy-l4@master \
+    --with github.com/mholt/caddy-dynamicdns@master \
+    --with github.com/caddy-dns/cloudflare@master \
     --with github.com/caddyserver/transform-encoder@master \
     --with github.com/hslatman/caddy-crowdsec-bouncer/http@main \
     --with github.com/hslatman/caddy-crowdsec-bouncer/layer4@main
@@ -27,5 +29,3 @@ COPY --from=node-build /app/Caddyfile /etc/caddy/Caddyfile
 
 ENTRYPOINT ["/usr/bin/caddy"]
 CMD ["run", "--config", "/etc/caddy/Caddyfile"]
-
-#

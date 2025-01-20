@@ -24,7 +24,7 @@
     "@typescript-eslint/parser": "8.0.0",
     "autoprefixer": "10.4.19",
     "eslint": "9.5.0",
-    "eslint-config-prettier": "9.1.0",
+    "eslint-config-prettier": "10.0.1",
     "eslint-plugin-svelte": "2.39.4",
     "lucide-svelte": "0.395.0",
     "postcss": "8.4.38",

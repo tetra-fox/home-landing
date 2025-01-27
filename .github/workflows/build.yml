@@ -53,7 +53,7 @@ jobs:
 
       - name: Build and push image
         id: docker_build
-        uses: docker/build-push-action@v6.12.0
+        uses: docker/build-push-action@v6.13.0
         with:
           push: ${{ env.SHOULD_PUSH }}
           platforms: linux/amd64 #,linux/arm64

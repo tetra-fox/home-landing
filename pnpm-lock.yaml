@@ -12,8 +12,8 @@ importers:
         specifier: 5.0.20
         version: 5.0.20
       '@sveltejs/adapter-static':
-        specifier: 2.0.3
-        version: 2.0.3(@sveltejs/kit@1.30.4(svelte@5.0.3)(vite@5.3.1(sass@1.77.5)))
+        specifier: 3.0.10
+        version: 3.0.10(@sveltejs/kit@1.30.4(svelte@5.0.3)(vite@5.3.1(sass@1.77.5)))
       '@sveltejs/kit':
         specifier: 1.30.4
         version: 1.30.4(svelte@5.0.3)(vite@5.3.1(sass@1.77.5))
@@ -400,10 +400,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sveltejs/adapter-static@2.0.3':
-    resolution: {integrity: sha512-VUqTfXsxYGugCpMqQv1U0LIdbR3S5nBkMMDmpjGVJyM6Q2jHVMFtdWJCkeHMySc6mZxJ+0eZK3T7IgmUCDrcUQ==}
+  '@sveltejs/adapter-static@3.0.10':
+    resolution: {integrity: sha512-7D9lYFWJmB7zxZyTE/qxjksvMqzMuYrrsyh1f4AlZqeZeACPRySjbC3aFiY55wb1tWUaKOQG9PVbm74JcN2Iew==}
     peerDependencies:
-      '@sveltejs/kit': ^1.5.0
+      '@sveltejs/kit': ^2.0.0
 
   '@sveltejs/kit@1.30.4':
     resolution: {integrity: sha512-JSQIQT6XvdchCRQEm7BABxPC56WP5RYVONAi+09S8tmzeP43fBsRlr95bFmsTQM2RHBldfgQk+jgdnsKI75daA==}
@@ -1476,7 +1476,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.13.0':
     optional: true
 
-  '@sveltejs/adapter-static@2.0.3(@sveltejs/kit@1.30.4(svelte@5.0.3)(vite@5.3.1(sass@1.77.5)))':
+  '@sveltejs/adapter-static@3.0.10(@sveltejs/kit@1.30.4(svelte@5.0.3)(vite@5.3.1(sass@1.77.5)))':
     dependencies:
       '@sveltejs/kit': 1.30.4(svelte@5.0.3)(vite@5.3.1(sass@1.77.5))
 

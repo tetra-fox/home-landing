@@ -1,3 +1,7 @@
+> [!NOTE]
+> Retired. Authentik's application dashboard has replaced this in my homelab.
+> It was built for my own setup and isn't maintained anymore.
+
 # home-landing
 
 Caddy-based landing page Docker image for my home network services
